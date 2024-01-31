@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(235, 235, 235);
+}
+
+@layer utilities {
+  .flex-center{
+    @apply flex justify-center items-center;
+  }
+}
+@layer utilities {
+  .flex-between{
+    @apply flex justify-between items-center;
+  }
+}
+
+@layer base{
+  .headline{
+    @apply text-2xl font-medium
+  }
+}
