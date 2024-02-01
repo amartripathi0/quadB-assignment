@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Container from "../components/Container";
-import Signin from "../components/auth/Signin";
-import Signup from "../components/auth/Signup";
+
 
 const HomePage = () => {
   return (

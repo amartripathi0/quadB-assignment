@@ -48,7 +48,7 @@ const Signup = () => {
       handleChange={handleChange}
       buttonLabel="Sign-Up"
       handleButtonClick={handleSubmit}
-      authMessage="Don't have an account"
+      authMessage="Already have an account"
 
     />
   );
