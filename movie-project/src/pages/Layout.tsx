@@ -1,7 +1,8 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 // Create the context outside the component
 export interface UserData {
   username: string;
@@ -9,23 +10,19 @@ export interface UserData {
 }
 
 export interface UserDataContextType {
-    user: UserData | null;
-    setUser: React.Dispatch<React.SetStateAction<UserData | null>>;
+  user: UserData | null;
+  setUser: React.Dispatch<React.SetStateAction<UserData | null>>;
 }
 
-export const UserDataContext = createContext({});
- 
-// Initialize the state and create the context provider function
-const UserDataContextProvider = ({ children }) => {
-  const [user, setUser] = useState({});
-  const userContextValue = {
-    user,
-    setUser,
-  };
+// Use the correct name for the provider
+export const UserDataContext = createContext<UserDataContextType | undefined>(undefined);
 
-  
+// Use the correct name for the provider
+export const UserDataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [user, setUser] = useState<UserData | null>(null);
+
   return (
-    <UserDataContext.Provider value={userContextValue}>
+    <UserDataContext.Provider value={{ user, setUser }}>
       {children}
     </UserDataContext.Provider>
   );
@@ -34,12 +31,11 @@ const UserDataContextProvider = ({ children }) => {
 const Layout = () => {
   return (
     <div>
-
       <ToastContainer />
-      {/* Use the context provider component */}
-      <UserDataContextProvider>
+      {/* Use the correct name for the provider */}
+      <UserDataProvider>
         <Outlet />
-      </UserDataContextProvider>
+      </UserDataProvider>
     </div>
   );
 };

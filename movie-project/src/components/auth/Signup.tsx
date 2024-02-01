@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { UserDataContext } from "../../pages/Layout";
-
  interface UserData {
   username: string;
   password: string;

@@ -7,18 +7,39 @@ import Container from "../components/Container";
 import Badge from "../components/Badge";
 import Datepicker from "react-tailwindcss-datepicker";
 import axios from "axios";
-import Button from "../components/Button";
+
+interface Show {
+  id: number;
+  name: string;
+  language: string;
+  rating: {
+    average: number | null;
+  };
+  status: string;
+  type: string;
+  runtime: string;
+  averageRuntime: string;
+  premiered: string | null;
+  ended: string | null;
+  genres: string[]; // If genres is an array of strings
+  summary: string;
+  image: {
+    original : string 
+
+  }| null;
+  // Add other properties if necessary
+}
 
 const MovieBookingPage = () => {
   const [movies, setMovies] = useState([]);
-  const [movieData, setMovieData] = useState({});
+  const [movieData, setMovieData] = useState<{ show?: Show }>({});
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useContext(UserDataContext);
   const navigate = useNavigate();
   
   const [value, setValue] = useState({
     startDate: new Date(),
-    endDate: new Date().setMonth(11),
+    endDate: new Date(),
   });
 
   const handleValueChange = (newValue) => {
