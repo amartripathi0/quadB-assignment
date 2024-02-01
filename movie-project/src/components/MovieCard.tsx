@@ -1,10 +1,8 @@
-import React from "react";
 import Badge from "./Badge";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({
-  children,
   extrastyles,
   rating,
   generes,
@@ -19,7 +17,6 @@ const MovieCard = ({
   summary,
   showId,
 }: {
-  children?: React.ReactNode;
   extrastyles?: string;
   rating: number | null;
   generes: string[];

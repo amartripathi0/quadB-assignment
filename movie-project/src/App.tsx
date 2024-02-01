@@ -8,10 +8,16 @@ import { toast } from "react-toastify";
 import { MoonLoader } from "react-spinners";
 import axios from "axios";
 
+
+interface UserData {
+  username: string;
+  password: string;
+}
+
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { user } = useContext(UserDataContext);
+  const { user} = useContext(UserDataContext);
   const navigate = useNavigate();
 
   async function fetchMovies(apiLink) {

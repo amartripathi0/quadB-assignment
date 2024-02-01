@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import InputField from '../components/form/InputField'
 import { useNavigate } from "react-router-dom";
 import AuthComp from "./AuthComp";
 import { toast } from "react-toastify";
@@ -7,13 +6,14 @@ import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { UserDataContext } from "../../pages/Layout";
 
+ interface UserData {
+  username: string;
+  password: string;
+}
 const Signup = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(UserDataContext);
-  interface UserData {
-    username: string;
-    password: string;
-  }
+
   const userdata: UserData = {
     username: "",
     password: "",
