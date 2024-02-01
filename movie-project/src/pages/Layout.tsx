@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Create the context outside the component
 export const UserDataContext = createContext({});
@@ -23,8 +24,8 @@ const UserDataContextProvider = ({ children }) => {
 const Layout = () => {
   return (
     <div>
-      <ToastContainer />
 
+      <ToastContainer />
       {/* Use the context provider component */}
       <UserDataContextProvider>
         <Outlet />
