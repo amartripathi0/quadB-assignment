@@ -88,13 +88,13 @@ const MovieBookingPage = () => {
           <div className=" flex-center gap-5">
             <h1>
               Welcome,{" "}
-              <span className="font-semibold text-xl">{`${user.username}`}</span>
+              <span className="font-semibold text-xl">{`${user?.username}`}</span>
             </h1>
             <button
               onClick={() => {
-                localStorage.removeItem(user.username);
+                localStorage.removeItem(user?.username);
                 navigate("/");
-                toast.success(`${user.username}, Logged out successfully`, {
+                toast.success(`${user?.username}, Logged out successfully`, {
                   position: "top-right",
                 });
               }}
@@ -246,7 +246,7 @@ const MovieBookingPage = () => {
                       <input
                         type="text"
                         disabled
-                        value={user.username}
+                        value={user?.username}
                         name="username"
                         id="username"
                         className="block w-full p-4 rounded-xl text-gray-900 border border-gray-300  bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -264,7 +264,7 @@ const MovieBookingPage = () => {
                     <div className="my-4">
                     
                     <button onClick={() => {
-                        toast.success(`Hurray🎉 ${user.username}, You're all set! Ticket booked for ${value.startDate.toLocaleString()}.`)
+                        toast.success(`Hurray🎉 ${user?.username}, You're all set! Ticket booked for ${value.startDate.toLocaleString()}.`)
                     }}
                         className=" relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                         <span className="text-lg relative px-3 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">

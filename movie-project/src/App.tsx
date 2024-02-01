@@ -9,11 +9,6 @@ import { MoonLoader } from "react-spinners";
 import axios from "axios";
 
 
-interface UserData {
-  username: string;
-  password: string;
-}
-
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,13 +36,13 @@ const App = () => {
           <div className=" flex-center gap-5">
             <h1>
               Welcome,{" "}
-              <span className="font-semibold text-xl">{`${user.username}`}</span>
+              <span className="font-semibold text-xl">{`${user?.username}`}</span>
             </h1>
             <button
               onClick={() => {
-                localStorage.removeItem(user.username);
+                localStorage.removeItem(user?.username);
                 navigate("/");
-                toast.success(`${user.username}, Logged out successfully`, {
+                toast.success(`${user?.username}, Logged out successfully`, {
                   position: "top-right",
                 });
               }}
