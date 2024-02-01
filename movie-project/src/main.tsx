@@ -12,6 +12,7 @@ import HomePage from "./pages/HomePage.tsx";
 import Layout from "./pages/Layout.tsx";
 import Signup from "./components/auth/Signup.tsx";
 import Signin from "./components/auth/Signin.tsx";
+import MovieBookingPage from "./pages/MovieBookingPage.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,7 +22,8 @@ const router = createBrowserRouter(
         <Route path="/home/signup" element={<Signup />} />
         <Route path="/home/signin" element={<Signin />} />
       </Route>
-      <Route path="/movies" element={<App />} />
+      <Route path="/movies" element={<App />}/>
+      <Route path="/movies/movie-ticket-booking/:showId" element={<MovieBookingPage />} />
     </Route>
   )
 );

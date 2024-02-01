@@ -1,7 +1,7 @@
 
 import {Link} from 'react-router-dom'
 
-const Button = ({label , watchLink} : {label : string , watchLink : string}) => {
+const Button = ({label , watchLink } : {label : string , watchLink : string}) => {
     
   return (
 <>

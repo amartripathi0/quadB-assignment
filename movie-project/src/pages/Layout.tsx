@@ -13,6 +13,7 @@ const UserDataContextProvider = ({ children }) => {
     setUser,
   };
 
+  
   return (
     <UserDataContext.Provider value={userContextValue}>
       {children}

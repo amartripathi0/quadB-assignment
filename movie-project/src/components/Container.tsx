@@ -1,16 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const Container = ({children , extraStyles} : {children : React.ReactNode , extraStyles ?: string}) => {
+const Container = ({
+  children,
+  extrastyles,
+}: {
+  children: React.ReactNode;
+  extrastyles?: string;
+}) => {
   return (
     <div
-    className={`${extraStyles} bg-white rounded-lg border-2 hover:shadow-lg shadow-grey-300
+      className={`${extrastyles} bg-white rounded-lg border-2 hover:shadow-lg shadow-grey-300
     flex justify-center items-center
     `}
     >
-        {children}
-
+      {children}
     </div>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;
