@@ -17,7 +17,7 @@ const HomePage = () => {
       <div className="flex bg-slate  mx-20 p-10 gap-10">
         <Container extrastyles="w-1/2 p-10 text-xl flex flex-col gap-10 text-justify">
           <div>
-            <h1 className="font-semibold text-2xl">About Project Assingment</h1>
+            <h1 className="font-semibold text-2xl">About Project Assignment</h1>
             Welcome to our innovative Movie Booking System, where the magic of
             cinema meets a user-friendly digital experience. Discover a curated
             list of movies, each offering a captivating cinematic journey.
@@ -33,7 +33,7 @@ const HomePage = () => {
 
           <div>
             <h1 className="font-semibold text-2xl">About Me</h1>
-            Hey!! I'm <span className="font-medium">Amar Trpiathi,</span> my
+            Hey!! I'm <span className="font-medium">Amar Tripathi,</span> my
             passion lies in UI/UX optimization using ReactJS, Tailwind CSS, and
             Redux Toolkit.In addition to my strong frontend skills, I also
             possess backend knowledge in NodeJS, REST APIs, MongoDB, TypeScript,
